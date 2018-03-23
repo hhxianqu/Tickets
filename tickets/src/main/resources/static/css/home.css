@@ -1,0 +1,72 @@
+/*信息*/
+.info{
+    height: auto;
+}
+
+.loginView{
+    height: 125px;
+    margin-top: -30px;
+}
+
+.infoView{
+    margin-top: 20px;
+    width: 600px;
+    height: 40px;
+}
+
+.infoLabel{
+    margin-top: 18px;
+    font-size: 17px;
+    text-align: center;
+}
+
+.warningLabel{
+    font-size: 13px;
+    margin-left: 70%;
+    -webkit-text-fill-color: red;
+}
+
+/*按钮*/
+.btnView{
+    margin-top: 50px;
+    margin-left: 125px;
+}
+.signBtn{
+    width: 125px;
+    height: 34px;
+    border-radius: 1em;
+    border-color: transparent;
+    background-color: #269abc;
+}
+
+
+.cancelBtn{
+    margin-left: 25px;
+    width: 125px;
+    height: 34px;
+    border-radius: 1em;
+    border-color: #269abc;
+    background-color: transparent;
+}
+
+
+/*.search{*/
+    /*border-radius: 1em;*/
+    /*border-color: #b6b6b6;*/
+    /*width: 275px;*/
+    /*height: 35px;*/
+    /*padding-left: 10px;*/
+
+/*}*/
+/*.searchBtn{*/
+    /*width: 125px;*/
+    /*height: 28px;*/
+    /*-webkit-text-fill-color: white;*/
+    /*background-color: #FED136;*/
+    /*border-radius: 0.7em;*/
+    /*margin-left: 10px;*/
+    /*margin-right: 255px;*/
+/*}*/
+#verifyBtn{
+    margin-top: 10px;
+}

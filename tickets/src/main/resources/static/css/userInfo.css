@@ -1,0 +1,48 @@
+.image {
+    width: 25px;
+    height: 25px;
+}
+
+#email {
+    width: 175px;
+    border-radius: 0.5em;
+    padding: 2px;
+    background-color: #e3e3e3;
+    box-shadow: transparent;
+    border-width: 1px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.selfInfo {
+    margin: 5px 30%;
+}
+
+#memberName, #level, #score{
+    font-weight: normal;
+}
+
+.info {
+    margin-top: 20px;
+}
+.info > p {
+    font-size: 13px;
+}
+
+.btn-info {
+    margin-left: 35%;
+}
+
+.btn-group {
+    border-color: darkgray;
+}
+
+.input{
+    display: none;
+    margin-top: -5px;
+    border-radius: 1em;
+    border-color: #e3e3e3;
+    width: 185px;
+    height: 30px;
+    padding: 5px;
+}

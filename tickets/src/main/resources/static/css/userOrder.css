@@ -1,0 +1,106 @@
+.nav > li > div > a, .nav > li > div > span {
+    margin-top: 30px;
+    margin-left: 35px;
+    width: 45px;
+    height: 40px;
+    margin-bottom: 20px;
+    border-color: transparent;
+}
+
+.nav > li > div > a:focus, .nav > li > div > a:hover {
+    text-decoration: none;
+    background-color: #eee
+}
+
+.nav > li.disabled > div > a {
+    color: #777
+}
+
+.nav > li.disabled > div > a:focus, .nav > li.disabled > div > a:hover {
+    color: #777;
+    text-decoration: none;
+    cursor: not-allowed;
+    background-color: transparent
+}
+
+.orderBtn, .orderBtn:hover{
+    width: 200px;
+    height: 100px;
+    background-color: transparent;
+    border-radius: 0;
+    border-top-width: 0;
+    border-color: #e0e0e0;
+    justify-content: space-between;
+    -webkit-text-fill-color: darkgrey;
+}
+
+.orderBtn.active{
+    height: 100px;
+    border-color: transparent;
+    background-color: transparent;
+    -webkit-text-fill-color: #fec503;
+    box-shadow: 1px 1px 1px 1px darkgrey;
+}
+
+.orderBtn.active > b {
+    display: block;
+    width: 40px;
+    height: 5px;
+    margin-left: 37%;
+    margin-top: -10px;
+    background-color: #fec503;
+    box-shadow: 0 3px 7px 0 rgba(254, 197, 3, 0.3)
+}
+
+.orderBtn > label {
+    margin: 35px;
+}
+
+#noneWarning {
+    margin: 25%;
+}
+
+/*订单颜色*/
+.notPaid {
+    -webkit-text-fill-color: #fec503;
+}
+.cancel {
+    -webkit-text-fill-color: red;
+}
+.finished {
+    -webkit-text-fill-color: darkred;
+}
+.notAllocate {
+    -webkit-text-fill-color: #2aabd2;
+}
+.price {
+    -webkit-text-fill-color: #fd6857;
+}
+.refund {
+    -webkit-text-fill-color: hotpink;
+}
+
+.position {
+    -webkit-text-fill-color: #2b669a;
+}
+
+.discountView{
+    box-shadow: 1px 1px 1px 1px #e0e0e0;
+    border-radius: 1.5em;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.btn-default{
+    color: darkgrey;
+    border-color: #fec503;
+}
+
+.discount {
+    background: linear-gradient(lightcyan, skyblue);
+    width: 100px;
+    height: 100px;
+    border-radius: 1.5em;
+    box-shadow: yellow;
+
+}

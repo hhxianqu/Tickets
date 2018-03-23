@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<title>Tickets</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">-->
+		<link href="css/style.css" rel="stylesheet">
+		<link href="css/sweet-alert.css" rel="stylesheet">
+        <link href="css/home.css" rel="stylesheet">
+	</head>
+	<body id="page-top">
+		<!-- Navigation -->
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <a class="navbar-brand page-scroll">
+                        <img src="images/logo.png">
+                    </a>
+					<ul class="nav navbar-nav navbar-right">
+                        <!--<li>-->
+                            <!--<input type="text" placeholder="搜索演唱会、场馆、明星" class="search">-->
+                            <!--<button class="searchBtn">搜索</button>-->
+                        <!--</li>-->
+                        <li><a>首页</a></li>
+                        <li><a href="#hot">所有演出</a></li>
+						<li><a href="#about">关于我们</a></li>
+                        <li>
+                            <div id ="signUp">
+                                <a class="page-scroll" data-toggle="modal" data-target="#login">登录／注册</a>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <div id="welcome">
+                                <a class="dropdown-toggle" data-toggle="dropdown">welcome,
+                                    <label id="usernameToShow"></label></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="userInfo.html">个人信息</a></li>
+                                    <li><a href="userOrder.html">我的订单</a></li>
+                                    <li><a href="userOrder.html">优惠券</a></li>
+                                    <li><a id="logout">退出登录</a></li>
+                                </ul>
+                            </div>
+                        </li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+        <!--login view-->
+        <div class="modal fade" id="login" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <img src="images/logo.png" style="width: 175px;height: 22px">
+                    </div>
+                    <div class="modal-body">
+                        <img src="images/background.jpg" class="img-responsive" />
+                        <a class="btn btn-link active" id="userLoginChoose">会员登录</a>
+                        <a class="btn btn-link" id="venueLoginChoose">场馆登录</a>
+                        <a class="btn btn-link" id="managerLoginChoose">经理登录</a>
+                        <!--会员登录-->
+                        <div class="loginView" id="userLogin">
+                            <div class="infoView">
+                                <label class="col-md-6 infoLabel" for="email">邮箱:</label>
+                                <input class="col-md-6 input" id="email" type="text" placeholder="请输入邮箱" value="">
+                                <label class="warningLabel" id="emailWarning">邮箱不能为空</label>
+                            </div>
+                            <div class="infoView">
+                                <label class="col-md-6 infoLabel" for="password">密码:</label>
+                                <input class="col-md-6 input" id="password" type="password" placeholder="请输入密码">
+                            </div>
+                        </div>
+                        <!--场馆登录-->
+                        <div class="loginView" id="venueLogin">
+                            <div class="infoView">
+                                <label class="col-md-6 infoLabel" for="venueNum">场馆编码:</label>
+                                <input class="col-md-6 input" id="venueNum" type="text" placeholder="请输入编码">
+                                <label class="warningLabel" id="venueNumWarning">编码不能为空</label>
+                            </div>
+                            <div class="infoView">
+                                <label class="col-md-6 infoLabel" for="password">密码:</label>
+                                <input class="col-md-6 input" id="venuePassword"
+                                       type="password" placeholder="请输入密码">
+                            </div>
+                        </div>
+                        <!--经理登录-->
+                        <div class="loginView" id="managerLogin">
+                            <div class="infoView">
+                                <label class="col-md-6 infoLabel" for="managerNum">经理编码:</label>
+                                <input class="col-md-6 input" id="managerNum" type="text" placeholder="请输入编码" value="">
+                                <label class="warningLabel" id="managerNumWarning">编码不能为空</label>
+                            </div>
+                            <div class="infoView">
+                                <label class="col-md-6 infoLabel" for="managerPassword">密码:</label>
+                                <input class="col-md-6 input" id="managerPassword"
+									   type="password" placeholder="请输入密码">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-default" id="userLoginBtn" data-dismiss="modal">登录</button>
+                        <button class="btn btn-default" id="venueLoginBtn" data-dismiss="modal">登录</button>
+                        <button class="btn btn-default" id="managerLoginBtn" data-dismiss="modal">登录</button>
+                        <button class="btn btn-default" data-dismiss="modal" data-toggle="modal" data-target="#signIn">去注册</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--signIn view-->
+        <div class="modal fade" id="signIn" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <img src="images/logo.png" style="height: 22px; width: 175px">
+                    </div>
+                    <div class="modal-body">
+                        <a class="btn btn-link active" id="userBtn">会员注册</a>
+                        <a class="btn btn-link" id="venueBtn">场馆注册</a>
+                        <div class="info" id="user">
+							<div class="modal-works"><span>会员信息</span></div>
+                            <div class="infoView">
+                                <label class="col-md-4 infoLabel" for="emailS">邮箱:</label>
+                                <input class="col-md-8 input" id="emailS" type="text" placeholder="请输入邮箱">
+                            </div>
+                            <div class="infoView">
+                                <label class="col-md-4 infoLabel" for="username">姓名:</label>
+                                <input class="col-md-8 input" id="username" type="text" placeholder="请输入姓名">
+                            </div>
+                            <div class="infoView">
+                                <label class="col-md-4 infoLabel" for="passwordS">密码:</label>
+                                <input class="col-md-8 input" id="passwordS" type="password" placeholder="请输入密码">
+                            </div>
+                            <div class="infoView">
+                                <label class="col-md-4 infoLabel" for="passAgain">确认密码:</label>
+                                <input class="col-md-8 input" id="passAgain" type="password" placeholder="再次输入密码">
+                            </div>
+							<div class="infoView">
+								<label class="col-md-4 infoLabel" for="passAgain">验证码:</label>
+								<input class="col-md-4 input" id="verification" type="text" placeholder="输入验证码">
+								<button class="col-md-4 btn btn-default" id="verifyBtn">发送验证码</button>
+							</div>
+                        </div>
+                        <div class="info" id="venue">
+                            <div class="modal-works"><span>场馆信息</span></div>
+							<div class="infoView">
+								<label class="col-md-4 infoLabel" for="venueName">场馆名:</label>
+								<input class="col-md-8 input" id="venueName" type="text" placeholder="请输入场馆名">
+							</div>
+							<div class="infoView">
+								<label class="col-md-4 infoLabel" for="city">场馆所在城市:</label>
+								<input class="col-md-8 input" id="city" type="text" placeholder="请输入场馆地点">
+							</div>
+							<div class="infoView">
+								<label class="col-md-4 infoLabel" for="detailPosition">详细地址:</label>
+								<input class="col-md-8 input" id="detailPosition" type="text" placeholder="如：XX街XX号">
+							</div>
+							<div class="infoView">
+								<label class="col-md-4 infoLabel" for="seats">座位情况:</label>
+								<input class="col-md-6 input" id="seats" type="text" placeholder="请输入可容纳总人数">
+							</div>
+							<div class="infoView">
+								<label class="col-md-4 infoLabel" for="venueEmail">联系方式:</label>
+								<input class="col-md-8 input" id="venueEmail" type="text" placeholder="请输入邮箱"><br>
+								<span style="color: darkgray; font-weight: lighter; font-size: 10px">
+									- 我们将通过邮箱告诉您注册结果。
+								</span>
+							</div>
+							<div class="infoView">
+								<label class="col-md-4 infoLabel" for="venuePasswordS">登录密码:</label>
+								<input class="col-md-8 input" id="venuePasswordS"
+									   type="password" placeholder="请输入密码">
+							</div>
+							<div class="infoView">
+								<label class="col-md-4 infoLabel" for="venuePasswordAgain">确认密码:</label>
+								<input class="col-md-8 input" id="venuePasswordAgain"
+									   type="password" placeholder="请再次输入密码">
+							</div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" id="userSign">注册</button>
+                        <button type="button" class="btn btn-default" id="venueSign">提交审批</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+		<section id="hot" style="margin-top: 100px;">
+			<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<div class="section-title">
+						<h3>- 所有演出 -</h3>
+					</div>
+				</div>
+			</div>
+			<div class="row row-0-gutter">
+				<div class="col-md-4 col-0-gutter">
+					<div class="ot-portfolio-item">
+						<figure class="effect-bubba">
+							<img src="images/poster1.jpg" alt="img02" class="img-responsive" />
+							<figcaption>
+								<h2>- 演唱会 -</h2>
+								<p>2018最新的演唱会</p>
+								<a id="concert">View more</a>
+							</figcaption>
+						</figure>
+					</div>
+				</div>
+				<div class="col-md-4 col-0-gutter">
+					<div class="ot-portfolio-item">
+						<figure class="effect-bubba">
+							<img src="images/poster2.jpg" alt="img02" class="img-responsive" />
+							<figcaption>
+								<h2>- 话剧歌剧 -</h2>
+								<p>2018最动人的话剧和歌剧</p>
+								<a id="opera">View more</a>
+							</figcaption>
+						</figure>
+					</div>
+				</div>
+				<div class="col-md-4 col-0-gutter">
+					<div class="ot-portfolio-item">
+						<figure class="effect-bubba">
+							<img src="images/poster3.jpg" alt="img02" class="img-responsive" />
+							<figcaption>
+								<h2>- 音乐会 -</h2>
+								<p>2018最炫酷的音乐盛宴</p>
+								<a id="musical">View more</a>
+							</figcaption>
+						</figure>
+					</div>
+				</div>
+            </div>
+                <div class="row row-0-gutter">
+				<div class="col-md-4 col-0-gutter">
+					<div class="ot-portfolio-item">
+						<figure class="effect-bubba">
+							<img src="images/poster4.jpg" alt="img02" class="img-responsive" />
+							<figcaption>
+								<h2>- 舞蹈芭蕾 -</h2>
+								<p>2018最柔美的表演</p>
+								<a id="dance">View more</a>
+							</figcaption>
+						</figure>
+					</div>
+				</div>
+				<div class="col-md-4 col-0-gutter">
+					<div class="ot-portfolio-item">
+						<figure class="effect-bubba">
+							<img src="images/poster5.jpg" alt="img02" class="img-responsive" />
+							<figcaption>
+								<h2>- 体育比赛 -</h2>
+								<p>2018最激烈的赛事</p>
+								<a id="sports">View more</a>
+							</figcaption>
+						</figure>
+					</div>
+				</div>
+				<div class="col-md-4 col-0-gutter">
+					<div class="ot-portfolio-item">
+						<figure class="effect-bubba">
+							<img src="images/poster6.jpg" alt="img02" class="img-responsive" />
+							<figcaption>
+								<h2>- 展览会 -</h2>
+								<p>2018休闲胜地</p>
+								<a id="exhibit">View more</a>
+							</figcaption>
+						</figure>
+					</div>
+				</div>
+			</div>
+			</div>
+		</section>
+
+		<img src="images/assurance.png" style="width: 95%; margin-left: 2.5%">
+		<section id="about">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<div class="section-title">
+							<h2>- 关于我们 -</h2>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="team-item">
+							<div class="team-image">
+								<img src="images/picture1.png" class="img-responsive" alt="author">
+							</div>
+							<div class="team-text">
+								<h3>我们郑重承诺</h3>
+								<div class="team-position">每一场都是更好的演出</div>
+								<p>我们会为了维护会员们的权益一直不懈努力，有任何问题都可以联系我们帮您解决。</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="team-item">
+							<div class="team-image">
+								<img src="images/picture2.jpeg" class="img-responsive" alt="author">
+							</div>
+							<div class="team-text">
+								<h3>我们认真筛选</h3>
+								<div class="team-position">100多家顶级剧院入驻</div>
+								<p>每一个剧院的申请都会经过我们仔细的考察，只为了给您最安全舒适的环境。</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="team-item">
+							<div class="team-image">
+								<img src="images/picture3.jpg" class="img-responsive" alt="author">
+							</div>
+							<div class="team-text">
+								<h3>我们用心准备</h3>
+								<div class="team-position">呈现了千余场豪华演出</div>
+								<p>每一场演出都经过了我们的严格审核，只为了给您最好的观看体验。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<p id="back-top">
+			<a href="#page-top"><i class="fa fa-angle-up"></i></a>
+		</p>
+
+		<footer>
+			<div class="container text-center">
+                <label class="label">有任何问题，欢迎致电： 13357739729. 或联系QQ： 735913885</label>
+			</div>
+		</footer>
+
+		<!-- Bootstrap core JavaScript
+			================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/SmoothScroll.js"></script>
+		<script src="js/theme-scripts.js"></script>
+		<script src="js/sweet-alert.js"></script>
+        <script src="js/util.js"></script>
+        <script src="js/home.js"></script>
+	</body>
+</html>

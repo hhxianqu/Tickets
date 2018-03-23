@@ -1,0 +1,72 @@
+a {
+    text-decoration: none;
+}
+ul, ol, li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#endCalendar, #startCalendar {
+    margin-top: -810px;
+    margin-left: -320px;
+    height: 28px;
+    width: 200px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.info {
+    margin: 5% 17%;
+}
+
+.info > h4 {
+    font-weight: normal;
+}
+
+.info > h4 > label {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.info > p {
+    font-size: 15px;
+}
+
+#typeChoose > ul {
+    border-radius: 0.5em;
+    margin-left: 265px;
+    width: 100px;
+}
+#typeChoose > ul > li > a{
+    text-align: center;
+    color: #2e6da4;
+    font-weight: lighter;
+    font-size: 13px;
+}
+#typeChoose > ul > li > a:hover {
+    color: #fec503;
+}
+
+.col-lg-4 {
+    margin-top: 15px;
+}
+
+#confirm {
+    margin-top: 15px;
+    margin-left: -100px;
+}
+
+#change {
+    margin-top: 15px;
+    margin-left: -100px;
+}
+
+#changeConfirm {
+    margin-top: 15px;
+    margin-left: -100px;
+}
+
+h4 {
+    height: 25px;
+}

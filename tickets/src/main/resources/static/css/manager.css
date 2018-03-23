@@ -1,0 +1,46 @@
+.btn-group {
+    -webkit-text-fill-color: black;
+    margin: 10px;
+}
+.btn-group:hover{
+    -webkit-text-fill-color: black;
+    background-color: transparent;
+}
+
+.btn-group.active {
+    -webkit-text-fill-color: white;
+}
+
+.btn-group.active:hover {
+    background-color: #fec503;
+}
+
+#audit, #performWaitToCal {
+    margin-left: 10%;
+    margin-top: 100px;
+}
+
+#audit > div > h4 {
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+
+.col-lg-4 {
+    margin-top: 10%;
+}
+.btn-block {
+    width: 155px;
+}
+
+.orderView > h3 {
+    -webkit-text-fill-color: #2aabd2;
+}
+
+.imageView {
+    position: absolute;
+    margin-top: -80px;
+    border-radius: 1em;
+    width: 125px;
+    box-shadow: 1px 1px 0 1px #e3e3e3;
+}

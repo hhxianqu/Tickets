@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tickets</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/sweet-alert.css" rel="stylesheet">
+    <link href="css/performance.css" rel="stylesheet">
+    <link href="css/userOrder.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <a class="navbar-brand page-scroll">
+                    <img src="images/logo.png">
+                </a>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="home.html">首页</a></li>
+                    <li class="dropdown">
+                        <div id="welcome">
+                            <a class="dropdown-toggle" data-toggle="dropdown">welcome,
+                                <label id="usernameToShow"></label></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="userInfo.html">个人信息</a></li>
+                                <li><a href="userOrder.html">我的订单</a></li>
+                                <li><a href="userOrder.html">优惠券</a></li>
+                                <li><a id="logout">退出登录</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" style="margin-top: 100px;">
+        <a class="btn tips" id="concert">
+            演唱会
+            <div class="borderBottom"></div>
+        </a>
+        <a class="btn tips" id="opera">
+            话剧歌剧
+            <div class="borderBottom"></div>
+        </a>
+        <a class="btn tips" id="musical">
+            音乐会
+            <div class="borderBottom"></div>
+        </a>
+        <a class="btn tips" id="dance">
+            舞蹈芭蕾
+            <div class="borderBottom"></div>
+        </a>
+        <a class="btn tips" id="sports">
+            体育比赛
+            <div class="borderBottom"></div>
+        </a>
+        <a class="btn tips" id="exhibit">
+            展览会
+            <div class="borderBottom"></div>
+        </a>
+        <div class="condition">
+            <div class="col-lg-5">
+                <label>按城市 : </label>
+                <a id="cityChoose" class="btn cityCondition active">全部城市</a>
+                <a id="all" class="btn cityCondition">全部城市</a>
+            </div>
+            <div class="col-lg-7">
+                <table id="city"></table>
+            </div>
+        </div>
+
+        <div id="perform"></div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/SmoothScroll.js"></script>
+    <script src="js/theme-scripts.js"></script>
+    <script src="js/sweet-alert.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/performance.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tickets</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">-->
+    <link href="css/sweet-alert.css" rel="stylesheet">
+    <link href="css/jquery.seat-charts.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/makeOrder.css" rel="stylesheet">
+    <link href="css/seat.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <a class="navbar-brand page-scroll">
+                    <img src="images/logo.png">
+                </a>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="home.html">首页</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">welcome,
+                            <label id="usernameToShow"></label></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="userInfo.html">个人信息</a></li>
+                            <li><a href="userOrder.html">我的订单</a></li>
+                            <li><a id="discountBtn">优惠券</a></li>
+                            <li><a id="logout">退出登录</a></li>
+                        </ul>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" style="margin-top: 120px;margin-left: 13%;" >
+        <h2 id="performName"></h2>
+        <label id="startTime"></label> 至 <label id="endTime"></label>
+        <label id="venueName"></label><br>
+        <label id="city"></label>
+        <label id="detailPosition"></label><br>
+        <hr width="700px">
+        <div class="col-lg-2">
+            <label>选择票面 : </label>
+        </div>
+        <div class="col-lg-2">
+            <button class="btn btn-link" id="vipBtn">vip票 | <label id="vipPrice"></label>元／张</button>
+        </div>
+        <div class="col-lg-2">
+            <button class="btn btn-link" id="normalBtn">普通票 | <label id="normalPrice"></label>元／张</button>
+        </div>
+        <div class="col-lg-6"></div>
+        <div>
+            <label>合计 : ¥ <span id="total">0</span> 元</label>
+            <span>VIP票 : <span id="vipNum">0</span>张</span>
+            <span>普通票 : <span id="normalNum">0</span>张</span>
+            <button class="btn btn-info" id="calculateBtn" data-toggle="modal" data-target="#calculate">结 算</button>
+            <button class="btn btn-info" id="calculateImmeBtn" data-toggle="modal" data-target="#calculate">结 算</button>
+        </div>
+        <div id="choose">
+            <div class="col-lg-2" style="right: 571px">
+                <label>选座 (<= 6张) :</label>
+            </div>
+            <!--<div class="col-lg-10" id="seat_map"></div>-->
+            <div id="seat-map" class="col-lg-10">
+            </div>
+            <div id="normal-seat-map" class="col-lg-10">
+            </div>
+            <div class="booking-details">
+                <h3>已选中的座位 (<span id="counter">0</span>):</h3>
+                <ul id="selected-seats">
+                </ul>
+                <div id="legend"></div>
+            </div>
+        </div>
+        <br>
+        <div id="immediate">
+            <div class="col-lg-2">
+                <label>预订票数 :</label>
+            </div>
+            <div class="col-lg-10">
+                <input class="input" type="text" placeholder="例如：10" id="number">
+                <h6>请正确填写购买的票数（<20张）</h6>
+            </div>
+        </div>
+    </div>
+
+    <div id="calculate" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">下单</div>
+                <div class="modal-body">
+                    <label>订单总金额 : <label id="orderPrice"></label>元</label><br>
+                    <label>可用优惠券 : </label>
+                    <input id="discountID" type="text" class="input" placeholder="请输入优惠券编号">
+                    <div id="discountSelf" style="margin: 10px"></div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-info" id="calculateConfirm">下单</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/SmoothScroll.js"></script>
+    <script src="js/theme-scripts.js"></script>
+    <script src="js/sweet-alert.js"></script>
+    <script src="js/jquery.seat-charts.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/makeOrder.js"></script>
+    <script src="js/chooseSeat.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tickets</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="css/sweet-alert.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/manager.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <a class="navbar-brand page-scroll">
+                <img src="images/logo.png">
+            </a>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a id="auditBtn">演出/场馆审核</a></li>
+                <li><a id="performWaitToCalBtn">未结算演出</a></li>
+                <li><a id="allVenuesBtn">所有场馆信息</a></li>
+                <li><a id="countChartBtn">销售统计</a></li>
+                <li><a id="logout">退出登录</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section id="audit">
+    <div class="container">
+        <h4>待处理审核</h4>
+        <header class="row col-lg-2">
+            <a id="venueAuditBtn" class="btn btn-group active">场馆审核</a>
+            <br>
+            <a id="venueChangeAuditBtn" class="btn btn-group active">场馆修改审核</a>
+            <br>
+            <a id="performAuditBtn" class="btn btn-group">演出审核</a>
+        </header>
+        <div class="col-lg-10">
+            <div id="venueAudit">
+                <h5 style="margin: 15% 30%" id="empty">暂时没有需要审核的场馆</h5>
+            </div>
+            <div id="venueChangeAudit">
+                <h5 style="margin: 15% 30%" id="emptyChange">暂时没有需要审核的场馆</h5>
+            </div>
+            <div id="performAudit">
+                <h5 style="margin: 15% 30%" id="emptyPerform">暂时没有需要审核的演出</h5>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="allVenues" class="container" style="margin-top: 100px"></section>
+
+<section id="performWaitToCal" style="margin-top: 100px">
+    <div class="container">
+        <header class="row col-lg-2">
+            <a id="unSettledPerformBtn" class="btn btn-group active">待结算演出</a>
+            <br>
+            <a id="settledPerformBtn" class="btn btn-group">已结算演出</a>
+        </header>
+        <div id="unSettledPerform" class="col-lg-10">
+            <h5 style="margin: 15% 30%" id="settled">暂时没有需要结算的演出</h5>
+        </div>
+        <div id="settledPerform" class="col-lg-10"></div>
+    </div>
+</section>
+
+<section id="countCharts" class="container" style="margin-top: 100px">
+    <div style="margin-left: 300px">
+        <div id="chart" style="width: 400px; height: 400px"></div>
+        <h4>销售总额：</h4>¥ <label id="balance"></label>
+    </div>
+</section>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/sweet-alert.js"></script>
+<script src="js/echarts.js"></script>
+<script src="js/util.js"></script>
+<script src="js/manager.js"></script>
+</body>
+</html>
